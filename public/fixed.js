@@ -6584,7 +6584,9 @@ define('fixed-element', [
             var ele = fixedElements[i];
             var fType = ele.getAttribute('type');
             // check invalid element and delete from document
-            if (this._currentFixedCount >= this._maxFixedCount || fType === 'gototop' && ele.firstElementChild.tagName.toLowerCase() !== 'mip-gototop') {
+            var bottom = layout.parseLength(ele.getAttribute('bottom'));
+            var top = layout.parseLength(ele.getAttribute('top'));
+            if (!top && !bottom || this._currentFixedCount >= this._maxFixedCount || fType === 'gototop' && ele.firstElementChild.tagName.toLowerCase() !== 'mip-gototop') {
                 ele.parentElement.removeChild(ele);
                 continue;
             }
@@ -6751,12 +6753,6 @@ define('fixed-element', [
         if (top) {
             fixedEle.style.top = top;
             return;
-        }
-        if (!top && !bottom) {
-            fixedEle.parentElement.removeChild(fixedEle);
-            // It will not be counted if the elements's type is non-standard.
-            this._fixedElements.pop(fixedEle);
-            this._currentFixedCount--;
         }
     };
     /**
