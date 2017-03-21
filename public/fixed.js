@@ -6586,7 +6586,7 @@ define('fixed-element', [
             // check invalid element and delete from document
             var bottom = layout.parseLength(ele.getAttribute('bottom'));
             var top = layout.parseLength(ele.getAttribute('top'));
-            if (type === 'left' && !top && !bottom || this._currentFixedCount >= this._maxFixedCount || fType === 'gototop' && ele.firstElementChild.tagName.toLowerCase() !== 'mip-gototop') {
+            if (fType === 'left' && !top && !bottom || this._currentFixedCount >= this._maxFixedCount || fType === 'gototop' && ele.firstElementChild.tagName.toLowerCase() !== 'mip-gototop') {
                 ele.parentElement.removeChild(ele);
                 continue;
             }
