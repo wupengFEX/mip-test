@@ -112,7 +112,7 @@ function invokeResolver(resolver, promise) {
 function invokeCallback(subscriber){
   var owner = subscriber.owner;
   var settled = owner.state_;
-  var value = owner.data_;  
+  var value = owner.data_;
   var callback = subscriber[settled];
   var promise = subscriber.then;
 
@@ -4120,7 +4120,7 @@ define('utils/event-emitter', ['require'], function (require) {
      * Return the result that the string is multiple or not.
      * @param {Object} obj The execute context
      * @param {Function} fn The function to be runned
-     * @param {string} name 
+     * @param {string} name
      * @param {Array} args
      * @return {boolean}
      */
@@ -4151,7 +4151,7 @@ define('utils/event-emitter', ['require'], function (require) {
     var proto = EventEmitter.prototype = {
         /**
          * Add handler to events
-         * @param {string} name 
+         * @param {string} name
          * @param {Function} handler
          * @return {Object}
          */
@@ -4325,7 +4325,7 @@ define('utils/gesture/gesture-recognizer', [
      */
     var STATE_START = 1;
     /**
-     * Mean the recognizer is waitting timer or another recognizer. 
+     * Mean the recognizer is waitting timer or another recognizer.
      * @const
      * @inner
      * @type {number}
@@ -4914,7 +4914,7 @@ define('utils/gesture/data-processor', [], function () {
         },
         /**
          * Calculate direction according to a coordinate.
-         * The meaning of return values:         
+         * The meaning of return values:
          *  0: origin
          *  1: up
          *  2: right
@@ -5592,7 +5592,7 @@ define('util', [
     'naboo'
 ], function (require) {
     'use strict';
-    // Page url 
+    // Page url
     var pageUrl = location.href;
     /**
      * Exchange a url to cache url.
@@ -6144,7 +6144,7 @@ define('utils/event-action', [
         },
         /**
          * Ensure the target element is a MIPElement
-         * @param {HTMLElement} target 
+         * @param {HTMLElement} target
          * @return {boolean}
          */
         checkTarget: function (target) {
@@ -6755,6 +6755,7 @@ define('fixed-element', [
         if (!top && !bottom) {
             fixedEle.parentElement.removeChild(fixedEle);
             // It will not be counted if the elements's type is non-standard.
+            this._fixedElements.pop(fixedEle);
             this._currentFixedCount--;
         }
     };
@@ -7042,7 +7043,7 @@ define('customElement', [
      * Expend current element's attributes which selected by attrs to an other object.
      * @param {Array.<string>} attrs Attributes' name list
      * @param {Object} element The target element
-     * @return {Object} 
+     * @return {Object}
      */
     customElement.prototype.expendAttr = function (attrs, element) {
         for (var i = 0; i < attrs.length; i++) {
@@ -7155,7 +7156,7 @@ define('viewer', [
          * @public
          */
         isIframed: win !== top,
-        /** 
+        /**
          * Patch for iframe
          */
         patchForIframe: function () {
@@ -7334,7 +7335,7 @@ define('performance', [
     /**
      * Record timing by name.
      * @param {string} name Name of the timing.
-     * @param {?number} timing  
+     * @param {?number} timing
      */
     function recordTiming(name, timing) {
         recorder[name] = parseInt(timing, 10) || Date.now();
@@ -7713,7 +7714,7 @@ define('element', [
             }
         };
         /**
-         * Method of executing event actions of the custom Element 
+         * Method of executing event actions of the custom Element
          */
         proto.executeEventAction = function (action) {
             this.customElement.executeEventAction(action);
@@ -7746,7 +7747,7 @@ define('element', [
         }
     }
     /**
-     * Register MIPElement. 
+     * Register MIPElement.
      * @param {string} name Name of a MIPElement.
      * @param {Class} elementClass
      * @param {string} css The csstext of the MIPElement.
