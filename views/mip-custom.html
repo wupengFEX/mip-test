@@ -1,35 +1,27 @@
 <!DOCTYPE html>
 <html mip>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-    <title>naboo测试</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
+    <title>title</title>
     <link rel="stylesheet" type="text/css" href="https://mipcache.bdstatic.com/static/v1/mip.css">
-    <link rel="canonical" href="对应的原页面地址">
+    <link rel="canonical" href="对应的 h5 页面 url">
     <style mip-custom>
     </style>
 </head>
 <body>
-    <mip-fixed type="top">上1</mip-fixed>
-    <mip-fixed type="bottom">下2</mip-fixed>
-    <mip-fixed type="right" top="50px">右3</mip-fixed>
-    <mip-fixed type="right" top="70px">右4</mip-fixed>
-    <mip-fixed type="left" top="70px">左5</mip-fixed>
-    <mip-fixed type="left" top="90px">左6</mip-fixed>
-    <mip-fixed type="left" top="110px">左7</mip-fixed>
-    <mip-fixed type="left" top="130px">左8</mip-fixed>
-    <mip-fixed type="gototop">
-        <mip-gototop>goto9</mip-gototop>
-    </mip-fixed>
-    <mip-fixed type="left" top="150px">左10</mip-fixed>
-    <mip-fixed type="left" top="170px">左11</mip-fixed>
-    <mip-fixed type="left" top="190px">左12</mip-fixed>
-    <mip-fixed type="left" top="210px">左13</mip-fixed>
-
-    <mip-fixed type="gototop">
-        <div>goto14</div>
-    </mip-fixed>
-    <mip-fixed type="left">左15</mip-fixed>
-    <script type="text/javascript" src="../public/fixed.js"></script>
+    <h2>定制化MIP示例页面</h2>
+    <p>正文</p>
+    <mip-custom>
+        <script type="application/json">
+        {
+            "accid": "34345345345",
+            "title": "定制化MIP示例页面"
+        }
+        </script>
+    </mip-custom>
+    <script src="https://mipcache.bdstatic.com/static/v1/mip.js"></script>
+    <script src="https://mipcache.bdstatic.com/static/v1/mip-mustache/mip-mustache.js"></script>
+    <script src="https://mipcache.bdstatic.com/static/v1/mip-custom/mip-custom.js"></script>
 </body>
 </html>
