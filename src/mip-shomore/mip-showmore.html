@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html mip>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://mipcache.bdstatic.com/static/v1/mip.css">
+    <title>Hello World</title>
+    <style type="text/css">
+    .btn {
+        color: #0261C0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .btn i {
+        -webkit-transform: rotate(90deg);
+        display: inline-block;
+        font-family: cicons !important;
+        font-style: normal;
+        -webkit-font-smoothing: antialiased;
+        margin-left: 10px;
+    }
+
+    .mip-showmore-open i {
+        -webkit-transform: rotate(-90deg);
+    }
+
+    .mip-showmore-btn {
+        position: relative;
+    }
+
+    .mip-showmore-btn:after {
+        content:"^";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        font-weight:bold;
+        top: 40%;
+        right: 1px;
+    }
+
+    .mip-showmore-open:after {
+        -webkit-transform: rotate(180deg);
+    }
+    </style>
+</head>
+
+<body>
+    <details>
+        <mip-showmore bottomshadow='1' maxheight='100' id="showmore08">
+            MIP HTML 基于HTML中的基础标签制定了全新的规范，通过对一部分基础标签的使用限制或功能扩展，使HTML能够展现更加丰富的内容；MIP JS 可以保证 MIP HTML 页面的快速渲染；MIP Cache 用于实现MIP页面的高速缓存，从而进一步提高页面性能。MIP HTML 基于HTML中的基础标签制定了全新的规范，通过对一部分基础标签的使用限制或功能扩展，使HTML能够展现更加丰富的内容；MIP JS 可以保证 MIP HTML 页面的快速渲染；MIP Cache 用于实现MIP页面的高速缓存，从而进一步提高页面性能。
+        </mip-showmore>
+        <div on="tap:showmore08.toggle" data-closetext="收起内容" class="btn mip-showmore-btn">
+            点击显示
+        </div>
+    </details>
+
+    <br><br><br>
+    <p>
+        <mip-showmore bottomshadow='1' maxheight='100' id="showmore10">
+            MIP HTML 基于HTML中的基础标签制定了全新的规范，通过对一部分基础标签的使用限制或功能扩展，使HTML能够展现更加丰富的内容；MIP JS 可以保证 MIP HTML 页面的快速渲染；MIP Cache 用于实现MIP页面的高速缓存，从而进一步提高页面性能。MIP HTML 基于HTML中的基础标签制定了全新的规范，通过对一部分基础标签的使用限制或功能扩展，使HTML能够展现更加丰富的内容；MIP JS 可以保证 MIP HTML 页面的快速渲染；MIP Cache 用于实现MIP页面的高速缓存，从而进一步提高页面性能。
+        </mip-showmore>
+        <div on="tap:showmore10.toggle" data-closestyle="mip-showmore-open" data-closestyle="mip-showmore-open" data-closetext="收起内容" class="mip-showmore-btn mip-showmore-btn">
+            点击显示
+        </div>
+    </p>
+    <script src="https://mipcache.bdstatic.com/static/v1/mip.js"></script>
+    <script src="./mip-showmore.js"></script>
+</body>
+
+</html>
