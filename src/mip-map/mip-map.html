@@ -8,38 +8,62 @@
     <link rel="canonical" href="对应的原页面地址">
     <style mip-custom>
     html, body, mip-map {
+        display: block;
         width: 100%;
         height: 500px;
+    }
+    textarea {
+        width: 100%;
+        height: 400px;
+    }
+    button {
+        background: red;
+        width: 100px;
+        height: 50px;
+        margin-top: 10px;
     }
     </style>
 </HEAD>
 <body>
 
-<mip-map>
-    <script type="application/json">
-    {
-        "ak": "hKhuzfFBrcL6zGm4s6b371NDxaUrhFPl",
-        "location": {
-            "province": "北京",
-            "city": "北京市",
-            "district": "海淀区",
-            "street": "西北旺东路10号院"
+<textarea id="textarea">
+{
+    "ak": "hKhuzfFBrcL6zGm4s6b371NDxaUrhFPl",
+    "location": {
+        "province": "北京",
+        "city": "北京市",
+        "district": "海淀区",
+        "street": "西北旺东路10号院百度科技园1号楼"
+    },
+    "controls": {
+        "NavigationControl": {
         },
-        "controls": {
-            "NavigationControl": {
-            },
-            "MapTypeControl": {
-            }
-        },
-        "info": {
-            "width" : 250,
-            "height": 100,
-            "content": "<h4>百度科技园1号楼</h4><p style='line-height:1.5;font-size:13px;'>百度科技园1号楼坐落于北京北京市海淀区西北旺东路10号院</p></div>"
+        "MapTypeControl": {
         }
+    },
+    "info": {
+        "width" : 250,
+        "height": 100,
+        "content": "<h4>百度科技园1号楼</h4><p style='line-height:1.5;font-size:13px;'>百度科技园1号楼坐落于北京北京市海淀区西北旺东路10号院</p></div>"
     }
-    </script>
-</mip-map>
+}
+</textarea>
+<button id='btn'>展示地图</button>
 <script src="https://mipcache.bdstatic.com/static/v1/mip.js"></script>
-<script src="./mip-map.js"></script>
+<script src="https://mipcache.bdstatic.com/static/v1/mip-map/mip-map.js"></script>
+<script type="text/javascript">
+var btn = document.querySelector('#btn');
+btn.addEventListener('click', function () {
+    var $ = require('zepto');
+    var map = document.querySelector('#map');
+    map && map.remove();
+    var html = '<mip-map id="map">'
+        +   '<script type="application/json">'
+        +       textarea.value
+        +   '<\/script>'
+        + '</mip-map>';
+    $(document.body).append($(html));
+});
+</script>
 </body>
 </html>
