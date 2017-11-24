@@ -10,6 +10,8 @@
     html, body, mip-map {
         display: block;
         width: 100%;
+    }
+    mip-map {
         height: 500px;
     }
     textarea {
@@ -21,6 +23,10 @@
         width: 100px;
         height: 50px;
         margin-top: 10px;
+    }
+    #bot {
+        height: 1000px;
+        width: 100%;
     }
     </style>
 </HEAD>
@@ -49,15 +55,29 @@
 }
 </textarea>
 <button id='btn'>展示地图</button>
+<input type="hidden" data-cont="0" id="hid">
 <script src="./mip.js"></script>
 <script src="./mip-map.js"></script>
 <script type="text/javascript">
 var btn = document.querySelector('#btn');
+var oldEleName;
 btn.addEventListener('click', function () {
+    var hid = document.querySelector('#hid');
+    var count = parseInt(hid.dataset.cont, 10);
+    count++;
+    hid.dataset.cont = count.toString();
     var $ = require('zepto');
     var map = document.querySelector('#map');
-    map && map.remove();
-    var html = '<mip-map id="map">'
+
+    var ids = hid.dataset.cont;
+    if (oldEleName) {
+        var ele = document.querySelector('#map' + oldEleName);
+        ele.style.height = '0px';
+        ele.style.display = 'none';
+    }
+    oldEleName = ids;
+
+    var html = '<mip-map id="map' + ids + '">'
         +   '<script type="application/json">'
         +       textarea.value
         +   '<\/script>'
