@@ -72,6 +72,7 @@ btn.addEventListener('click', function () {
     var ids = hid.dataset.cont;
     if (oldEleName) {
         var ele = document.querySelector('#map' + oldEleName);
+        ele.style.height = '0px';
         ele.style.display = 'none';
     }
     oldEleName = ids;
@@ -80,7 +81,7 @@ btn.addEventListener('click', function () {
         +   '<script type="application/json">'
         +       textarea.value
         +   '<\/script>'
-        + '</mip-map><p id="bot"></p>';
+        + '</mip-map>';
     $(document.body).append($(html));
 });
 </script>
