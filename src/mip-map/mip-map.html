@@ -10,6 +10,8 @@
     html, body, mip-map {
         display: block;
         width: 100%;
+    }
+    mip-map {
         height: 500px;
     }
     textarea {
@@ -21,6 +23,10 @@
         width: 100px;
         height: 50px;
         margin-top: 10px;
+    }
+    #bot {
+        height: 1000px;
+        width: 100%;
     }
     </style>
 </HEAD>
@@ -74,7 +80,7 @@ btn.addEventListener('click', function () {
         +   '<script type="application/json">'
         +       textarea.value
         +   '<\/script>'
-        + '</mip-map>';
+        + '</mip-map><p id="bot"></p>';
     $(document.body).append($(html));
 });
 </script>
