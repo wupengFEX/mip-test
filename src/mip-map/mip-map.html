@@ -49,16 +49,20 @@
 }
 </textarea>
 <button id='btn'>展示地图</button>
+<input type="hidden" data-cont="0" id="hid">
 <script src="./mip.js"></script>
 <script src="./mip-map.js"></script>
 <script type="text/javascript">
 var btn = document.querySelector('#btn');
 btn.addEventListener('click', function () {
-    debugger;
+    var hid = document.querySelector('#hid');
+    var count = parseInt(hid.dataset.cont, 10);
+    count++;
+    hid.dataset.cont = count.toString();
     var $ = require('zepto');
     var map = document.querySelector('#map');
     map && map.remove();
-    var html = '<mip-map id="map">'
+    var html = '<mip-map id="map' + hid.dataset.cont + '">'
         +   '<script type="application/json">'
         +       textarea.value
         +   '<\/script>'
