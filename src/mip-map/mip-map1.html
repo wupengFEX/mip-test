@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<HTML MIP>
+<HEAD>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <title>地图组件</title>
+    <link rel="stylesheet" type="text/css" href="https://mipcache.bdstatic.com/static/v1/mip.css">
+    <link rel="canonical" href="对应的原页面地址">
+    <style mip-custom>
+    html, body, mip-map {
+        display: block;
+        width: 100%;
+    }
+    mip-map {
+        height: 500px;
+    }
+    textarea {
+        width: 100%;
+        height: 400px;
+    }
+    button {
+        background: red;
+        width: 100px;
+        height: 50px;
+        margin-top: 10px;
+    }
+    #bot {
+        height: 1000px;
+        width: 100%;
+    }
+    </style>
+</HEAD>
+<body>
+<mip-map id="map">
+    <script type="application/json">
+        {
+            "ak": "hKhuzfFBrcL6zGm4s6b371NDxaUrhFPl",
+            "location": {
+                "province": "北京",
+                "city": "北京市",
+                "district": "海淀区",
+                "street": "西北旺东路10号院百度科技园1号楼"
+            },
+            "controls": {
+                "NavigationControl": {
+                },
+                "MapTypeControl": {
+                }
+            },
+            "info": {
+                "width" : 250,
+                "height": 100,
+                "content": "<h4>百度科技园1号楼</h4><p style='line-height:1.5;font-size:13px;'>百度科技园1号楼坐落于北京北京市海淀区西北旺东路10号院</p></div>"
+            }
+        }
+    </script>
+</mip-map>
+</body>
+<script src="./mip.js"></script>
+<script src="./mip-map.js"></script>
+</body>
+</html>
