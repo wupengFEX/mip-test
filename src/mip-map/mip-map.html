@@ -61,7 +61,9 @@
 <script type="text/javascript">
 var btn = document.getElementById('btn');
 var oldEleName;
+alert(1);
 btn.addEventListener('click', function () {
+    alert(2);
     var hid = document.getElementById('hid');
     var count = parseInt(hid.getAttribute('cont'), 10);
     count++;
