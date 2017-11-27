@@ -64,17 +64,17 @@ var btn = document.getElementById('btn');
 var oldEleName;
 alert('start');
 btn.addEventListener('click', function () {
-    var hid = document.document.getElementById('hid');
+    var hid = document.getElementById('hid');
     var count = parseInt(hid.dataset.cont, 10);
     count++;
     alert(1);
     hid.dataset.cont = count.toString();
     var $ = require('zepto');
-    var map = document.document.getElementById('map');
+    var map = document.getElementById('map');
     alert(2);
     var ids = hid.dataset.cont;
     if (oldEleName) {
-        var ele = document.document.getElementById('map' + oldEleName);
+        var ele = document.getElementById('map' + oldEleName);
         ele.style.height = '0px';
         ele.style.display = 'none';
     }
