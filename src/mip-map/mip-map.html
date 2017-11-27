@@ -54,7 +54,7 @@
     }
 }
 </textarea>
-<button id='btn'>展示地图</button>
+<button id='btn'>展示地图 start</button>
 <input type="hidden" data-cont="0" id="hid">
 <script src="./mip.js"></script>
 <script src="./mip-map.js"></script>
@@ -62,7 +62,6 @@
 var btn = document.getElementById('btn');
 var oldEleName;
 btn.addEventListener('click', function () {
-    alert(1);
     var hid = document.getElementById('hid');
     var count = parseInt(hid.getAttribute('cont'), 10);
     count++;
