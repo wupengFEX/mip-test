@@ -59,24 +59,22 @@
 <script src="./mip.js"></script>
 <script src="./mip-map.js"></script>
 <script type="text/javascript">
-var btn = document.querySelector('#btn');
+var btn = document.getElementById('btn');
 var oldEleName;
 btn.addEventListener('click', function () {
-    var hid = document.querySelector('#hid');
+    var hid = document.getElementById('hid');
     var count = parseInt(hid.getAttribute('cont'), 10);
     count++;
     hid.setAttribute('cont', count.toString());
     var $ = require('zepto');
-    var map = document.querySelector('#map');
-
+    var map = document.getElementById('map');
     var ids = hid.getAttribute('cont');
     if (oldEleName) {
-        var ele = document.querySelector('#map' + oldEleName);
+        var ele = document.getElementById('map' + oldEleName);
         ele.style.height = '0px';
         ele.style.display = 'none';
     }
     oldEleName = ids;
-
     var html = '<mip-map id="map' + ids + '">'
         +   '<script type="application/json">'
         +       textarea.value
