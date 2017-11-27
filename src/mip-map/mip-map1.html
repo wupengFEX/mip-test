@@ -31,21 +31,62 @@
     </style>
 </HEAD>
 <body>
-<mip-map id="map">
-    <script type="application/json">
-        {
-            "ak": "hKhuzfFBrcL6zGm4s6b371NDxaUrhFPl",
-            "location": {
-                "province": "北京",
-                "city": "北京市",
-                "district": "海淀区",
-                "street": "西北旺东路10号院百度科技园1号楼"
-            }
+
+<textarea id="textarea">
+{
+    "ak": "hKhuzfFBrcL6zGm4s6b371NDxaUrhFPl",
+    "location": {
+        "province": "北京",
+        "city": "北京市",
+        "district": "海淀区",
+        "street": "西北旺东路10号院百度科技园1号楼"
+    },
+    "controls": {
+        "NavigationControl": {
+        },
+        "MapTypeControl": {
         }
-    </script>
-</mip-map>
-</body>
+    },
+    "info": {
+        "width" : 250,
+        "height": 100,
+        "content": "<h4>百度科技园1号楼</h4><p style='line-height:1.5;font-size:13px;'>百度科技园1号楼坐落于北京北京市海淀区西北旺东路10号院</p></div>"
+    }
+}
+</textarea>
+<button id='btn'>展示地图</button>
+<input type="hidden" data-cont="0" id="hid">
 <script src="./mip.js"></script>
 <script src="./mip-map.js"></script>
+<script type="text/javascript">
+var btn = document.querySelector('#btn');
+var oldEleName;
+btn.addEventListener('click', function () {
+    var hid = document.querySelector('#hid');
+    var count = parseInt(hid.dataset.cont, 10);
+    count++;
+    alert(1);
+    hid.dataset.cont = count.toString();
+    var $ = require('zepto');
+    var map = document.querySelector('#map');
+    alert(2);
+    var ids = hid.dataset.cont;
+    if (oldEleName) {
+        var ele = document.querySelector('#map' + oldEleName);
+        ele.style.height = '0px';
+        ele.style.display = 'none';
+    }
+    alert(3);
+    oldEleName = ids;
+    alert(4);
+    var html = '<mip-map id="map' + ids + '">'
+        +   '<script type="application/json">'
+        +       textarea.value
+        +   '<\/script>'
+        + '</mip-map>';
+    $(document.body).append($(html));
+    alert(5);
+});
+</script>
 </body>
 </html>
