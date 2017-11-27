@@ -63,13 +63,13 @@ var btn = document.querySelector('#btn');
 var oldEleName;
 btn.addEventListener('click', function () {
     var hid = document.querySelector('#hid');
-    var count = parseInt(hid.dataset.cont, 10);
+    var count = parseInt(hid.getAttribute('cont'), 10);
     count++;
-    hid.dataset.cont = count.toString();
+    hid.setAttribute('cont', count.toString());
     var $ = require('zepto');
     var map = document.querySelector('#map');
 
-    var ids = hid.dataset.cont;
+    var ids = hid.getAttribute('cont');
     if (oldEleName) {
         var ele = document.querySelector('#map' + oldEleName);
         ele.style.height = '0px';
