@@ -64,7 +64,31 @@ var btn = document.getElementById('btn');
 var oldEleName;
 alert('start');
 btn.addEventListener('click', function () {
-    alert(1123123);
+        alert(1);
+    var hid = document.querySelector('#hid');
+        alert(22);
+    var count = parseInt(hid.dataset.cont, 10);
+    count++;
+    hid.dataset.cont = count.toString();
+    var $ = require('zepto');
+    var map = document.querySelector('#map');
+    alert(2);
+    var ids = hid.dataset.cont;
+    if (oldEleName) {
+        var ele = document.querySelector('#map' + oldEleName);
+        ele.style.height = '0px';
+        ele.style.display = 'none';
+    }
+    alert(3);
+    oldEleName = ids;
+    alert(4);
+    var html = '<mip-map id="map' + ids + '">'
+        +   '<script type="application/json">'
+        +       textarea.value
+        +   '<\/script>'
+        + '</mip-map>';
+    $(document.body).append($(html));
+    alert(5);
 });
 </script>
 </body>
