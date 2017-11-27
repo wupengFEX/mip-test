@@ -54,37 +54,10 @@
     }
 }
 </textarea>
-<button id='btn'>展示地图 start3</button>
+<button id='btn'>展示地图 start11</button>
 <input type="hidden" data-cont="0" id="hid">
-<script src="./mip.js"></script>
 <script type="text/javascript">
 alert(1);
-btn.addEventListener('click', function () {
-    var hid = document.querySelector('#hid');
-    var count = parseInt(hid.dataset.cont, 10);
-    count++;
-    alert(1);
-    hid.dataset.cont = count.toString();
-    var $ = require('zepto');
-    var map = document.querySelector('#map');
-    alert(2);
-    var ids = hid.dataset.cont;
-    if (oldEleName) {
-        var ele = document.querySelector('#map' + oldEleName);
-        ele.style.height = '0px';
-        ele.style.display = 'none';
-    }
-    alert(3);
-    oldEleName = ids;
-    alert(4);
-    var html = '<mip-map id="map' + ids + '">'
-        +   '<script type="application/json">'
-        +       textarea.value
-        +   '<\/script>'
-        + '</mip-map>';
-    $(document.body).append($(html));
-    alert(5);
-});
 </script>
 </body>
 </html>
