@@ -65,30 +65,23 @@ btn.addEventListener('click', function () {
     var hid = document.getElementById('hid');
     var count = parseInt(hid.getAttribute('cont'), 10);
     count++;
-    alert(1);
     hid.setAttribute('cont', count.toString());
     var $ = require('zepto');
     var map = document.getElementById('map');
-    alert(2);
     var ids = hid.getAttribute('cont');
     if (oldEleName) {
         var ele = document.getElementById('map' + oldEleName);
         ele.style.height = '0px';
         ele.style.display = 'none';
     }
-    alert(3);
     oldEleName = ids;
-    alert(4);
-        
     var map = document.createElement('mip-map');
     map.id = "map" + ids;
     var script = document.createElement('script');
     script.type = "application/json";
     script.innerText = textarea.value;
-    map.appendChild(script);
-        
+    map.appendChild(script);        
     $(document.body).append($(map));
-    alert(5);
 });
 </script>
 </body>
